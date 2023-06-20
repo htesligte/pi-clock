@@ -3,7 +3,6 @@ Element.Properties.transform = {
 
     set: function(transform){
       var property = 'transform';
-          console.log(Browser);
           if(Browser.chrome) property = 'WebkitTransform';
           if(Browser.firefox)  property = 'MozTransform';
           if(Browser.opera) property = 'OTransform';
@@ -32,7 +31,7 @@ Element.Properties.transform = {
   
   $(window).addEvent('domready', function()
   {
-    var $hourWrap = $$('.hour-wrap');
+      var $hourWrap = $$('.hour-wrap');
       var $hourFront = $hourWrap.getElement('div.front');
       var $hourBack = $hourWrap.getElement('div.back')
       var $hourTop = $hourWrap.getElement('div.digit-top');
@@ -138,3 +137,12 @@ Element.Properties.transform = {
   
       setClock.periodical(1000);
   });
+
+setInterval(() => {
+    document.body.style.backgroundImage = `url('https://picsum.photos/800/600?${(new Date()).getTime()}')`;
+}, 1000*60*5);
+
+function shutdown() {
+    console.log("here");
+    fetch("http://localhost:8000/shutdown", {method: "POST"}).then(r => r.json()).then(r => console.log(r));
+}
