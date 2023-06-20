@@ -138,11 +138,12 @@ body{
   
   .buttons {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    height: 20vh; /* Optional: adjust the height of the container as needed */
+    height: 40vh; /* Optional: adjust the height of the container as needed */
     }
   .buttons button {
     padding: 0.5em;
-    font-size: 3em;
+    font-size: 1em;
   }
