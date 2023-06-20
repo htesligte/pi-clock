@@ -140,7 +140,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Optional: adjust the height of the container as needed */
+    height: 20vh; /* Optional: adjust the height of the container as needed */
     }
   .buttons button {
     padding: 0.5em;
